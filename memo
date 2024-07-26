@@ -1,0 +1,39 @@
+-tailwindcss 설치
+C:\Coding\JS\20240721_CHAT_APP\frontend>npm install -D tailwindcss postcss autoprefixer
+C:\Coding\JS\20240721_CHAT_APP\frontend>npx tailwindcss init -p
+
+//tailwind.config.js content 부분 복사
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+//index.css에 전부 지우고 아래 내용 복사
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//daisyUI 설치
+C:\Coding\JS\20240721_CHAT_APP\frontend>npm i -D daisyui@latest
+
+
+//tailwind.config.js plugin 부분에 추가
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+      extend: {},
+    },
+    //eslint-disable-next-line no-undef
+    plugins: [require('daisyui'),],
+  }
